@@ -5,7 +5,7 @@ from decouple import config
 
 IP_DEVICE = config('IP_DEVICE')
 
-proc = subprocess.Popen(["ping", "-t", IP_DEVICE], stdout=subprocess.PIPE)
+proc = subprocess.Popen(["ping", IP_DEVICE], stdout=subprocess.PIPE)
 while True:
 	line = proc.stdout.readline()
 	if not line:
