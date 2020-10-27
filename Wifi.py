@@ -1,6 +1,4 @@
-import sys
 import subprocess
-import os 
 from decouple import config
 
 IP_DEVICE = config('IP_DEVICE')
@@ -10,7 +8,7 @@ while True:
 	if not line:
 		break
 	try:
-		connected_ip = line.decode("utf-8").split()[2].replace(':','')
+		connected_ip = line.decode("utf-8").split()[2].replace(':', '')
 		print(connected_ip)
 		if connected_ip == IP_DEVICE:
 			print("Tung is home")
